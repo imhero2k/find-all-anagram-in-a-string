@@ -1,0 +1,14 @@
+Brute force
+class Solution:
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        l1=[i for i in p]
+        l2=[i for i in s]
+        l1.sort()
+        r=[]
+        for i in range(len(s)-len(p)+1):
+            k=l2[i:i+len(p)]
+            k.sort()       
+            if k==l1:
+                r.append(i)
+        return r
+Sliding window method:
